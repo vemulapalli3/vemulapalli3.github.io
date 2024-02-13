@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Music Slap</title>
+</head>
+<body>
+    <header>
+        <h1>Music Slap</h1>
+    </header>
+
+    <div class="container">
+
+        <h2>Concept</h2>
+        <p>
+            Music Slap is an expressive musical interface that utilizes the human body. It is a werable piece of technology that allows any performer to create music on the go. This musical interface considers the overall experience of the performer, thus it can be used while sitting, standing or even lying down!
+        </p>
+        <h2>Functionality</h2>
+        <p>
+            Multiple pads (switches), each encoded to a musical note in the C4 octave, are attached to a shirt that can be worn by a human user as well as rings made out of aluminium foil are worn on both hands of the user. Tapping an aluminium ring to a pad on the shirt will produce a sound (from the computer using the serial port) of the corresponding musical note. Each pad is labelled with the musical note it corresponds to. As well, both sharps and flats are present in our musical interface!
+            Music Slap can also switch between different octaves by toggling the two pushbuttons:
+            <ul>
+                <li>if the pushbutton closer to the user is pressed (in the image and demo video below, this would mean the button closer to the puppet), then all the musical notes in the interface decrease to an octave lower than the current octave setting</li>
+                <li>if the pushbutton further away from the user is pressed (in the image and demo video below, this would mean the button further away from the puppet), then all the musical notes in the interface increase to an octave higher than the current octave setting</li>
+            </ul>
+        </p>
+            The user input is taken via the Arduino code whereas the musical note sounds are produced from the computer attached via a python code file. The Arduino code sends messages to the connected port on the computer when it detects a user input and the python code file listens to messages sent to the port connected to the Arduino using the Serial module. Executing the python file after starting to run the Arduino code allows the two programs to communicate. This communication enables to produce the output sound of a musical note when a pad on the shirt is touched by the aluminium ring. This sound is generated through the pygame.mixer module and emitted via the computer.
+        
+        <p>
+            The image below showcases the final artifact:
+        </p>
+        <p>
+            The natural music notes are represented with squares in the interface and are on the red part of the shirt, whereas the sharp and flat music notes are presented in rectangles on the yellow belt.
+        </p>
+        <p>
+            <em>Note: Due to the limited amount of wiring available, a human-sized interface was not feasible to produce. Hence, a puppet was used to represent the human user in this image and in the demo video showcased later. This puppet allows to get a feel of the interaction. </em>
+        </p>
+        <img src="CPSC599-A1-Photo.jpg" alt="Music Slap Final Artifact">
+
+        <h2>Concept Development</h2>
+        <p>The following image displays the concept development that took place for this project.</p>
+        <img src="ConceptDev.jpg" alt="Concept Development Image">
+
+        <h2>Demo Video</h2>
+        <video width="720" height="640" controls>
+            <source src="demo.mp4" type="video/mp4">
+        </video>
+
+        <h2>Code</h2>
+        <p>Click <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/tree/main/A1/code" target="_blank">here</a> for the code used in this project.</p>
+
+        <h2>Circuit Schematic Diagram</h2>
+        <img src="Schematic.PNG" alt="Circuit Schematic Diagram">
+
+        <h2>References</h2>
+        <p>
+            <ul>
+                <li>Sound files obtained from  https://github.com/plemaster01/PythonPiano/tree/main/assets/notes </li>
+                <li>https://github.com/plemaster01/PythonPiano/blob/main/main.py </li>
+                <li>https://www.youtube.com/watch?v=AHr94RtMj1A&t=6s </li>
+                <li>https://www.cs.carleton.edu/faculty/dmusicant/cs232w20/pages/page470460.html </li>
+                <li>https://www.deviceplus.com/arduino/the-basics-of-arduino-reading-switch-states/#:~:text=The%20pin%20states%20can%20be,conditional%20branching%20after%20checking%20them. </li>
+                <li>https://mehackit.org/en/courses/electronics_and_programming_basics/02-switch-stuff-on-and-off/01-its-a-switch/ </li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>
