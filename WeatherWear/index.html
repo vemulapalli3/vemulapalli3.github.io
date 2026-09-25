@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Wear Documentation</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">vemulapalli3<span>.dev</span></a>
+            <nav>
+                <a href="../index.html">← Back to Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+        
+        <main class="main-content doc-container">
+            
+            <div class="title-badge">System Documentation</div>
+            <h1 class="doc-main-title">Weather Wear</h1>
+            <p class="doc-lead-text">
+                WeatherWear is an interactive, IoT physical data visualization system that bridges the gap between digital meteorological data and physical space. Designed as a tangible alternative to traditional smartphone applications, the model fetches real-time ambient weather data and translates it into an intuitive, physical display that suggests appropriate clothing choices for the user.
+            </p>
+
+            <hr class="doc-divider">
+
+            <article class="doc-section">
+                <h2>1. Overview and Concept</h2>
+                <p>
+                    In a world saturated with digital screen notifications, this project explores tangible user interfaces (TUIs) to streamline daily routines. By transforming abstract digital forecasts into ambient, glanceable physical representations, the system allows users to make informed, screen-free decisions before stepping outdoors.
+                </p>
+                <p>
+                    The system converts complex digital weather streams including temperature, precipitation, and ambient conditions into an intuitive physical and visual form. By leveraging an integrated logic engine, it dynamically maps this real-time climate data to tailored, highly practical clothing recommendations. This ambient approach ultimately minimizes digital fatigue by delivering high-utility information at a glance, completely eliminating the need to interact with a smartphone or screen before heading outdoors.
+                </p>
+            </article>
+
+            <article class="doc-section">
+                <h2>2. Architecture Development</h2>
+                <p>
+                    WeatherWear displays the weather data using clothing items. This model informs the user of what to wear if going outdoors. It extracts data from a weather-focused website and displays real-time weather information.
+                </p>
+                <p>
+                    For instance, if the outdoor temperature drops to 2°C, the system dynamically visualizes this chill by displaying a winter jacket, intuitively signaling to the user that they need heavy insulation before stepping outside. Conversely, if the temperature climbs to a warm 25°C, the display shifts to a T-shirt to indicate that lightweight clothing is appropriate for the current climate. Furthermore, the logic engine account for active precipitation; if it begins to rain, the model overrides or adapts the display to show a rain jacket, ensuring the user is always properly protected from the elements.
+                </p>
+                <p>
+                    Hence, WeatherWear represents weather data through the appropriate clothing item to wear for that weather condition.
+                </p>
+                <p>
+                    As an additional feature, the system allows users to proactively plan their day by displaying forecasted weather information for the next few hours. This eliminates the daily guesswork of deciding whether to pack an extra layer or a rain jacket, as the interface clearly signals what the coming hours will bring. This functionality is entirely user-driven via the integrated dual-button interface; pressing the right push button allows the user to look ahead and watch how the weather changes over the upcoming timeline, while pressing the left push button decrements the display back to the current hour's conditions.
+                </p>
+                <p>
+                    The images below showcase the final artifact:
+                </p>
+                <p>
+                    Each of the following clothing items are displayed according to the weather condition at which they should be worn.
+                </p>
+                <img src="heavyWinterJacket.jpg" alt="Heavy Winter Jacket">
+                <img src="winterJacket.jpg" alt="Winter Jacket">
+                <img src="rainJacket.jpg" alt="Rain Jacket">
+                <img src="jeanJacket.jpg" alt="Jean Jacket">
+                <img src="hoodie.jpg" alt="Hoodie">
+                <img src="tshirt.jpg" alt="T-Shirt">
+
+                <br><br>
+                <p>The following images display the concept development that took place for this project.</p>
+                <img src="conceptDev1.jpg" alt="Concept Development Image 1" id="sch">
+                <img src="conceptDev2.jpg" alt="Concept Development Image 2" id="sch">
+                <img src="conceptDev3.jpg" alt="Concept Development Image 3" id="sch">
+            </article>
+
+            <article class="doc-section">
+                <h2>3. Hardware Logic</h2>
+                <p>
+                    The physicalization is built around the Arduino Uno microcontroller, which acts as the central hub managing both mechanical outputs and tactile user inputs. To translate digital weather streams into a tangible representation, a servo motor is mechanically linked to a physical display array, dynamically sweeping to precise angular coordinates to reveal the appropriate clothing recommendation. Users navigate the forecast timeline using a dual-button configuration wired directly to the microcontroller. The right push button serves as an increment trigger that prompts the system to step forward into upcoming forecast data, while the left push button acts as a decrement trigger to shift the display back toward the present condition. Both tactile switches utilize debouncing logic to ensure clean digital state transitions, allowing the Arduino to flawlessly transmit hardware interrupts over a USB serial bus based on which button is pressed.
+                </p>
+
+                <p>Circuit Schematic Diagram:</p>
+                <img src="Schematic.PNG" alt="Circuit Schematic Diagram">
+            </article>
+
+            <article class="doc-section">
+                <h2>4. Core Firmware Implementation</h2>
+                <p>
+                    The software pipeline relies on a custom Python script that handles high-level data orchestration by connecting to a weather API to extract, parse, and isolate both current and forecasted meteorological conditions. Using an integrated conditional logic engine, the script determines the optimal clothing profiles for different time intervals and stands ready to transmit these packages over a USB serial bus. Simultaneously, the Arduino firmware maintains a continuous serial listening loop while actively monitoring the dual-button interface. When a user presses the right push button, the Arduino sends an interrupt signal to the Python script to fetch and increment to the next upcoming forecast. Conversely, pressing the left push button sends a separate trigger that decrements the timeline back toward the present data. Upon receiving these hardware cues, the Python script transmits the corresponding data packet, which the firmware decodes and maps to a specific angular position, instantly driving the servo motor to reveal the correct physical wardrobe suggestion.
+                </p>
+            </article>
+
+        </main>
+
+        <aside class="tech-sidebar">
+            <div class="sidebar-sticky-content">
+                <div class="panel-heading">// CORE TECH STACK</div>
+                
+                <div class="spec-group">
+                    <h5>LANGUAGES</h5>
+                    <div class="spec-pills">
+                        <span>Embedded C/C++</span> <span>Python</span> <span>Bare-Metal Programming</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>TOOLS, FRAMEWORKS and METHODOLOGIES</h5>
+                    <div class="spec-pills">
+                        <span>UART</span> <span>Serial Bus</span> <span>Virtual COM Port</span> <span>Weather API</span> <span>Arduino Uno</span> <span>Arduino Core API</span> <span>Arduino IDE</span> <span>Analog-to-Digital (ADC)</span> <span>Data Parsing and Modeling</span> <span>Tangible User Interface (TUI)</span> <span>Bi-Directional Serial Communication</span> <span>Ambient Data Physicalization</span> <span>State Machine Architecture</span> <span>Software-Hardware Codesign</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>

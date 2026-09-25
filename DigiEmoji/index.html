@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiEmoji Documentation</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">vemulapalli3<span>.dev</span></a>
+            <nav>
+                <a href="../index.html">← Back to Portfolio</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="layout-grid">
+        
+        <main class="main-content doc-container">
+            
+            <div class="title-badge">System Documentation</div>
+            <h1 class="doc-main-title">DigiEmoji</h1>
+            <p class="doc-lead-text">
+                DigiEmoji is an interactive IoT digital decor designed to effortlessly transform static living and workspaces into dynamic, expressive environments. Built for users looking to break the monotony of traditional room decor such as static posters and standard desk accessories, this project blends hardware and software to inject personality into any room with minimal user effort.
+            </p>
+
+            <hr class="doc-divider">
+
+            <article class="doc-section">
+                <h2>1. Overview and Concept</h2>
+                <p>
+                    The core concept centers on a compact smart display that serves as a modern ambient centerpiece. Instead of cycling through complex widgets or generic photo frames, DigiEmoji focuses on hyper-targeted, high-impact visual expression using universally understood digital iconography.
+                </p>
+            </article>
+
+            <article class="doc-section">
+                <h2>2. Architecture Development</h2>
+                <p>
+                    DigiEmoji is created with LEDs, a pushbutton and an Arduino Uno. Its main purpose is to serve as a piece of homedecor that can instantly enhance the atmosphere of a room (and even one's mind). With five built-in designs that can be controlled with a pushbutton, one has multiple options to choose from based on their mood or liking. Or, if their mood changes, another design is ready to take on the spotlight!
+                </p>
+                <p>
+                    The five designs are: Watermelon, Flower, Strawberry, Heart and Smiley Face. The user is able to iterate through these designs by pressing the pushbutton and the respective LEDs light up for the design selected. As well, once the last design is reached, the first design is displayed after clicking on the pushbutton therefore a cyclic iteration is implemented for the display of designs.
+                </p>
+                <p>
+                    These images below showcase the five designs:
+                </p>
+
+                <p>Watermelon:</p>
+                <img src="Watermelon.jpg" alt="Watermelon Design" class="digi">
+                <p>Flower:</p>
+                <img src="Flower.jpg" alt="Flower Design" class="digi">
+                <p>Strawberry:</p>
+                <img src="Strawberry.jpg" alt="Strawberry Design" class="digi">
+                <p>Heart:</p>
+                <img src="Heart.jpg" alt="Heart Design" class="digi">
+                <p>Smiley Face:</p>
+                <img src="SmileyFace.jpg" alt="Smiley Face Design" class="digi">
+
+                <p>The following images display the concept development that took place for this project.</p>
+                <img src="ConceptDev1.PNG" alt="Concept Development Image 1">
+                <img src="ConceptDev2.PNG" alt="Concept Development Image 2">
+            </article>
+
+            <article class="doc-section">
+                <h2>3. Hardware Logic</h2>
+                <p>
+                    The hardware architecture is designed for a low-cost, high-visibility IoT device that balances minimal power consumption with a vibrant visual output. Driven by an Arduino Uno microcontroller, the system leverages native 5V digital I/O pins to directly source and sink current for individual matrix nodes within a custom-wired LED Matrix Array. This display module consists of a grid of standard 2-pin discrete LEDs configured in a common-anode or common-cathode row/column layout across a breadboard. To protect the system, inline 220-ohm to 330-ohm resistors are placed on every active row and column channel, limiting the forward current from the Arduino GPIO pins to safe levels of approximately 20mA per pin. This configuration successfully prevents electrical damage to the LEDs while ensuring the microcontroller's ATmega328P chip is never overloaded during operation.
+                </p>
+
+                <p>Circuit Schematic Diagram:</p>
+                <img src="Schematic.PNG" alt="Circuit Schematic Diagram">
+            </article>
+
+            <article class="doc-section">
+                <h2>4. Core Firmware Implementation</h2>
+                <p>The software implementation leverages lightweight, bare-metal C++ programming to achieve smooth visual rendering and low-latency state changes within constrained hardware environments.</p>
+            </article>
+
+        </main>
+
+        <aside class="tech-sidebar">
+            <div class="sidebar-sticky-content">
+                <div class="panel-heading">// CORE TECH STACK</div>
+                
+                <div class="spec-group">
+                    <h5>LANGUAGES</h5>
+                    <div class="spec-pills">
+                        <span>Embedded C/C++</span> <span>Bare-Metal Programming</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>TOOLS and FRAMEWORKS</h5>
+                    <div class="spec-pills">
+                        <span>Arduino Uno</span> <span>Arduino Core API</span> <span>Arduino IDE</span> <span>Analog-to-Digital (ADC)</span> <span>Algorithmic Graphic Mapping</span> <span>Control Flow Optimization</span> <span>Direct-Drive Matrix Architecture</span> <span>16MHz Hardware Clock Speed Management</span> <span>32KB Flash Memory Allocation</span> <span>Digital I/O</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+</body>
+</html>
