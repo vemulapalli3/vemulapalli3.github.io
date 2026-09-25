@@ -1,64 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>DigiEmoji</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>DigiEmoji</h1>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="#" class="logo">vemulapalli3<span>.dev</span></a>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+            </nav>
+        </div>
     </header>
 
-    <div class="container">
+    <div class="layout-grid">
+        <main class="main-content">
+            <section id="about" class="hero-section">
+                <div class="title-badge">Embedded Systems • Robotics • Extended Reality (XR) • AI/ML • Simulation</div>
+                <h1>Building high-performance software where <span class="gradient-text">silicon meets space</span>.</h1>
+                <p class="hero-bio">
+                    I am a Systems Software Engineer specializing in the intersection of real-time machine perception, multi-sensor fusion, and low-latency systems software. My work focuses on building high-performance C++ architectures, spatial tracking frameworks, and custom simulation environments that successfully bridge the sim-to-real gap. From writing raw data-piping loops for physical sensors to designing robust multi-camera calibration infrastructure, I excel at optimizing the critical software paths where physical kinematics meet digital realities. I thrive on solving complex spatial math challenges under strict real-time and hardware-in-the-loop (HIL) latency constraints.
+                </p>
+                <div class="cta-group">
+                    <a href="#projects" class="btn-primary">View Engineering Work</a>
+                </div>
+            </section>
 
-        <h2>Concept</h2>
-        <p>
-            There are times when we walk into a room and it seems boring and empty. With the same old posters on the walls and desk supplies, one might look to spice things up a bit (without much effort of course)! Hence, I present DigiEmoji.
-        </p>
-        <h2>Functionality</h2>
-        <p>
-            DigiEmoji is created with LEDs, a pushbutton and an Arduino Uno. Its main purpose is to serve as a piece of homedecor that can instantly enhance the atmosphere of a room (and even one's mind). With five built-in designs that can be controlled with a pushbutton, one has multiple options to choose from based on their mood or liking. Or, if their mood changes, another design is ready to take on the spotlight!
-        </p>
-        <p>
-            The five designs are: Watermelon, Flower, Strawberry, Heart and Smiley Face. The user is able to iterate through these designs by pressing the pushbutton and the respective LEDs light up for the design selected. As well, once the last design is reached, the first design is displayed after clicking on the pushbutton therefore a cyclic iteration is implemented for the display of designs.
-        </p>
-        <p>
-            These images below showcase the five designs:
-        </p>
+            <section id="projects">
+                <h2 class="section-title">Projects</h2>
+                <div class="project-list">
 
-        <p>Watermelon:</p>
-        <img src="Watermelon.jpg" alt="Watermelon Design">
-        <p>Flower:</p>
-        <img src="Flower.jpg" alt="Flower Design">
-        <p>Strawberry:</p>
-        <img src="Strawberry.jpg" alt="Strawberry Design">
-        <p>Heart:</p>
-        <img src="Heart.jpg" alt="Heart Design">
-        <p>Smiley Face:</p>
-        <img src="SmileyFace.jpg" alt="Smiley Face Design">
+                    <div class="hybrid-card">
+                        <div class="card-body">
+                            <span class="card-tag">Spatial Computing / 3D Reconstruction / Simulation / Extended Reality (XR)</span>
+                            <h3>VR Digital Twin Simulation Platform</h3>
+                            <p class="desc">Developed an immersive VR digital twin simulation platform to replicate target real-world environments, enabling the deployment, validation, and Hardware-in-the-Loop (HIL) testing of MR/AR applications prior to physical integration.</p>
+                            <div class="card-links">
+                                <a href="">
+                                    <svg class="github-icon" xmlns="http://w3.org" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                                <a href="">🔗 System Documentation</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2>Concept Development</h2>
-        <p>The following images display the concept development that took place for this project.</p>
-        <img src="ConceptDev1.PNG" alt="Concept Development Image 1">
-        <img src="ConceptDev2.PNG" alt="Concept Development Image 2">
+                    <div class="hybrid-card">
+                        <div class="card-body">
+                            <span class="card-tag">Embedded Systems / Wearable Technology / Smart Clothing / ARM Cortex-M Dual-Processor Embedded Development Board</span>
+                            <h3>Music Tap</h3>
+                            <p class="desc">🥉 Won Third Place in the 2024 Garmin Embedded in Embedded Competition.<br><br>
+                                Engineered an interactive, novel wearable musical instrument that translates real-time physical gestures and fabric touchpoints into dynamic soundscapes, enabling portable music creation during active transit.
+                            </p>
+                            
+                            <div class="card-links">
+                                <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/tree/main/MusicTap">
+                                    <svg class="github-icon" xmlns="http://w3.org" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                                <a href="MusicTap/index.html">🔗 System Documentation</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2>Demo Video</h2>
-        <video width="720" height="640" controls>
-            <source src="demo.mp4" type="video/mp4">
-        </video>
+                    <div class="hybrid-card">
+                        <div class="card-body">
+                            <span class="card-tag">Embedded Systsems / Prototype / Arduino</span>
+                            <h3>Music Slap</h3>
+                            <p class="desc">The first iteration of Music Tap. Created an initial prototype of smart clothing that translates physical body gestures into real time soundscapes using microcontrollers and custom electric switches.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/tree/main/MusicSlap">
+                                    <svg class="github-icon" xmlns="http://w3.org" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                                <a href="MusicSlap/index.html">🔗 System Documentation</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2>Code</h2>
-        <p>Click <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/blob/main/DigiEmoji/DigiEmoji.ino" target="_blank">here</a> for the Arduino Code.</p>
+                    <div class="hybrid-card">
+                        <div class="card-body">
+                            <span class="card-tag">Embedded Systsems / Arduino</span>
+                            <h3>Weather Wear</h3>
+                            <p class="desc">Developed an interactive physical data visualization that tracks real-time local weather metrics to automatically suggest the perfect outfit to wear.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/tree/main/WeatherWear">
+                                    <svg class="github-icon" xmlns="http://w3.org" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                                <a href="WeatherWear/index.html">🔗 System Documentation</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2>Circuit Schematic Diagram</h2>
-        <img src="Schematic.PNG" alt="Circuit Schematic Diagram">
+                    <div class="hybrid-card">
+                        <div class="card-body">
+                            <span class="card-tag">Embedded Systems / Arduino</span>
+                            <h3>DigiEmoji</h3>
+                            <p class="desc">Engineered an Arduino powered ambient light display that transforms traditional home decor into a customizable, real-time dynamic LED art canvas.</p>
+                            <div class="card-links">
+                                <a href="https://github.com/vemulapalli3/vemulapalli3.github.io/tree/main/DigiEmoji">
+                                    <svg class="github-icon" xmlns="http://w3.org" viewBox="0 0 24 24">
+                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                                <a href="DigiEmoji/index.html">🔗 System Documentation</a>
+                            </div>
+                        </div>
+                    </div>
 
-        <h2>References</h2>
-        <p>
-            <ul>
-                <li>LED Ignition with 2 Buttons Example from https://www.arduinocircuit.com/arduino-choice-of-led-ignition-with-2-buttons/ </li>
-            </ul>
-        </p>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="tech-sidebar">
+            <div class="sidebar-sticky-content">
+                <div class="panel-heading">// CORE TECH STACK</div>
+                
+                <div class="spec-group">
+                    <h5>LANGUAGES</h5>
+                    <div class="spec-pills">
+                        <span>C++</span> <span>C</span> <span>Python</span> <span>C#</span> <span>Java</span> <span>CUDA</span> <span>ARM Assembly</span> <span>Cython</span> <span>SQL</span> <span>HTML</span> <span>CSS</span> <span>JavaScript</span> <span>Bash</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>SILICON and HARDWARE TARGETS</h5>
+                    <div class="spec-pills">
+                        <span>STM32</span> <span>ESP32</span> <span>Raspberry Pi</span> <span>Arduino Uno</span> <span>Meta Quest 2/3</span> <span>ARM Cortex-M Dual-Processor Embedded Development Board</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>LOW-LEVEL PROTOCOLS</h5>
+                    <div class="spec-pills">
+                        <span>UART</span> <span>SPI</span> <span>I2C</span> <span>UDP</span> <span>TCP</span> <span>FreeRTOS</span> <span>VxWorks</span> <span>Bare-Metal C/C++</span> <span>Direct Memory Access (DMA)</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>TOOLS and PIPELINES</h5>
+                    <div class="spec-pills">
+                        <span>Git</span> <span>CI/CD</span> <span>ROS2</span> <span>YOLO</span> <span>OpenCV</span> <span>PyTorch</span> <span>TensorFlow</span> <span>ONNX</span> <span>OpenXR</span> <span>MATLAB</span> <span>Simulink</span> <span>Unity</span> <span>Unreal Enginge 5</span> <span>Blender</span> <span>Stable-Baselines3</span> <span>Lamma</span> <span>Gemma</span>
+                    </div>
+                </div>
+
+                <div class="spec-group">
+                    <h5>FRAMEWORKS</h5>
+                    <div class="spec-pills">
+                        <span>HIL Emulation</span> <span>Hardware Abstraction Layer (HAL)</span> <span>Low Level APIs</span> <span>Multithreading</span> <span>Object Oriented Programming</span>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
     </div>
+
 </body>
 </html>
